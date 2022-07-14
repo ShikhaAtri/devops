@@ -14,6 +14,7 @@ pipeline {
         stage('Compile') {
             steps {
                 sh 'mvn clean install'
+		sh 'mvn verify sonar:sonar'
             }
         }
         stage('Package') {
